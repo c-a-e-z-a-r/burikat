@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+body {
+    margin: 0;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(45deg, #ff0000, #ff7300, #ffeb00, #47ff00, #00aaff, #9d00ff);
+    background-size: 400% 400%;
+    animation: funkyGradient 4s infinite alternate ease-in-out;
+}
+
+@keyframes funkyGradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.container {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+}
+
+.main-text {
+    font-family: 'Press Start 2P', cursive;
+    font-size: min(12vw, 5rem);
+    color: white;
+    text-shadow: 0 0 10px black, 0 0 20px red, 0 0 40px yellow;
+    animation: moveAndSpin 3s ease-in-out infinite alternate;
+}
+
+@keyframes moveAndSpin {
+    0% { transform: translateX(-40vw) rotate(0deg); }
+    100% { transform: translateX(40vw) rotate(360deg); }
+}
+
+/* Mobile Optimization */
+@media (max-width: 600px) {
+    .main-text {
+        font-size: min(15vw, 4rem);
+        animation: moveAndSpin 2.5s ease-in-out infinite alternate;
+    }
+}
